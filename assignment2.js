@@ -1,12 +1,11 @@
 /*
     Author: Maxwell Sleeper
-    File: homework2.js
+    File: assignment2.js
     Date Created: 2/20/26
-    Date Last Edited: 3/20/26
-    Version: 2.0
+    Date Last Edited: 3/27/26
+    Version: 1.0
     Description: Validation and review display logic for the patient intake form.
 */
-/* Validation and review display logic */
 
 // Clear review area
 function removeReview() {
