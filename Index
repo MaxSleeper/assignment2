@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sleeper's Snake Oils - Patient Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body onload="showDate()">
+
+<!-- HEADER -->
+<div id="header">
+    <img src="ElixirLogo.jpg" alt="Medical Logo" id="logo">
+    <h1>Sleeper's Snake Oils & Miracle Cures</h1>
+    <p>Today is: <span id="today"></span></p>
+</div>
+
+<hr>
+
+<!-- FORM -->
+<div id="main">
+    <form id="patientForm" onsubmit="return validateForm()">
+
+        <table>
+            <tr>
+                <th colspan="2">Patient Registration Form</th>
+            </tr>
+
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <input type="text" id="middleInit" placeholder="MI">
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <span class="error" id="nameError"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth:</td>
+                <td>
+                    <input type="date" id="dob" required>
+                    <span class="error" id="dobError"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="email" id="email" placeholder="name@domain.tld" required>
+                    <span class="error" id="emailError"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone:</td>
+                <td>
+                    <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <span class="error" id="phoneError"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <input type="text" id="address1" placeholder="Address Line 1" required><br>
+                    <input type="text" id="address2" placeholder="Address Line 2"><br>
+                    <input type="text" id="city" placeholder="City" required>
+                    <select id="state" required>
+                        <option value="">Select State</option>
+                        <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                        <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                        <option>DC</option><option>FL</option><option>GA</option><option>HI</option>
+                        <option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                        <option>KS</option><option>KY</option><option>LA</option><option>ME</option>
+                        <option>MD</option><option>MA</option><option>MI</option><option>MN</option>
+                        <option>MS</option><option>MO</option><option>MT</option><option>NE</option>
+                        <option>NV</option><option>NH</option><option>NJ</option><option>NM</option>
+                        <option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+                        <option>OK</option><option>OR</option><option>PA</option><option>RI</option>
+                        <option>SC</option><option>SD</option><option>TN</option><option>TX</option>
+                        <option>UT</option><option>VT</option><option>VA</option><option>WA</option>
+                        <option>WV</option><option>WI</option><option>WY</option>
+                        <option>PR</option>
+                    </select>
+                    <input type="text" id="zip" placeholder="Zip" pattern="[0-9]{5}" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Symptoms:</td>
+                <td>
+                    <textarea id="symptoms" rows="3" placeholder="Describe your symptoms..." required></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Medical History:</td>
+                <td>
+                    <input type="checkbox" id="mumps"> Mumps<br>
+                    <input type="checkbox" id="measles"> Measles<br>
+                    <input type="checkbox" id="rubella"> Rubella<br>
+                    <input type="checkbox" id="smallpox"> Small Pox<br>
+                    <input type="checkbox" id="bigpox"> Big Pox
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </td>
+            </tr>
+
+            <tr>
+                <td>Ready to party?</td>
+                <td>
+                    <input type="radio" name="party" value="Yes"> Yes
+                    <input type="radio" name="party" value="Oooh yeah"> Oooh yeah
+                </td>
+            </tr>
+
+            <tr>
+                <td>Insurance?</td>
+                <td>
+                    <input type="radio" name="insurance" value="Yes"> Yes
+                    <input type="radio" name="insurance" value="No"> No
+                </td>
+            </tr>
+
+            <tr>
+                <td>Budget (1–10):</td>
+                <td>
+                    <input type="range" id="budget" min="1" max="10" value="5">
+                    <span id="budgetDisplay">5</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="reset" value="CLEAR AND START OVER">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<hr>
+
+<!-- FOOTER -->
+<div id="footer">
+    Sleeper's Snake Oils & Miracle Cures | Houston TX<br><br>
+    <a href="https://redballmarketglobal.us/" target="_blank">
+        <button type="button">Contact Us</button>
+    </a>
+</div>
+
+</body>
+</html>
