@@ -6,6 +6,8 @@
     Version: 2.0
     Description: Validation and review display logic for the patient intake form.
 */
+/* Validation and review display logic */
+
 // Clear review area
 function removeReview() {
     document.getElementById("outputformdata").innerHTML = "";
@@ -74,4 +76,18 @@ function showReview(){
         if(t==="checkbox"){
             output+="<tr><td>"+e.name+"</td><td>"+(e.checked?"Yes":"No")+"</td><td>"+(e.checked?"<span class='ok'>&#10003;</span>":"")+"</td></tr>";
         } else if(t==="radio" && e.checked){
-            output+="<tr><td>"+e.name
+            output+="<tr><td>"+e.name+"</td><td>"+e.value+"</td><td><span class='ok'>&#10003;</span></td></tr>";
+        } else if(t==="text" || t==="email" || t==="password" || t==="tel" || t==="date" || t==="textarea" || t==="select-one"){
+            if(t==="password") continue; // hide passwords
+            var val=e.value||"";
+            var status="";
+            if(e.required && val==="") status="<span class='errmsg'>Required</span>";
+            output+="<tr><td>"+e.name+"</td><td>"+val+"</td><td>"+status+"</td></tr>";
+        } else if(t==="range"){
+            output+="<tr><td>"+e.name+"</td><td>$"+e.value+"</td><td></td></tr>";
+        }
+    }
+    output+="</table>";
+    document.getElementById("outputformdata").innerHTML=output;
+    document.getElementById("outputformdata").scrollIntoView();
+}
